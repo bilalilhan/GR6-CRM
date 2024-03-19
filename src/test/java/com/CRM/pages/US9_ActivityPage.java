@@ -11,7 +11,7 @@ public class US9_ActivityPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(name ="More")
+    @FindBy(xpath = "//span[@class='More']")
     public WebElement options;
 
 }
