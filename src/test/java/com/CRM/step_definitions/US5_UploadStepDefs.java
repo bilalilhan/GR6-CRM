@@ -1,29 +1,37 @@
 package com.CRM.step_definitions;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class US5_UploadStepDefs {
 
-    @When("the user clicks on upload file on the message form")
-    public void the_user_clicks_on_upload_file_on_the_message_form() {
-
-
+    @Given("to the text insertion button, by clicking on this button, the text or photo should be inserted in the message tab.")
+    public void toTheTextInsertionButtonByClickingOnThisButtonTheTextOrPhotoShouldBeInsertedInTheMessageTab() {
     }
-    @When("when the user uploads the file")
-    public void when_the_user_uploads_the_file() {
 
+    @And("by typing the text of the photo in the message tab and clicking the insert button in the file text, it should be inserted in the message tab.")
+    public void byTypingTheTextOfThePhotoInTheMessageTabAndClickingTheInsertButtonInTheFileTextItShouldBeInsertedInTheMessageTab() {
     }
-    @When("when he enters the text of the file or images into the message form.")
-    public void when_he_enters_the_text_of_the_file_or_images_into_the_message_form() {
 
+    @Given("user's click on the file upload in the message form")
+    public void userSClickOnTheFileUploadInTheMessageForm() {
     }
-    @Then("the user should see the text and file or photo in the message by clicking on In text")
-    public void the_user_should_see_the_text_and_file_or_photo_in_the_message_by_clicking_on_in_text() {
 
+    @When("the user clicks on the message tab.")
+    public void theUserClicksOnTheMessageTab() {
     }
-    @Then("the user should be able to delete it by clicking on the photo and file")
-    public void the_user_should_be_able_to_delete_it_by_clicking_on_the_photo_and_file() {
 
+    @When("user clicks on the upload file button.")
+    public void userClicksOnTheUploadFileButton() {
+    }
+
+    @Then("the user should be able to click on the upload file and image button and upload the file or photo with formats .pdf, .txt, .jpeg, .png, .docx")
+    public void theUserShouldBeAbleToClickOnTheUploadFileAndImageButtonAndUploadTheFileOrPhotoWithFormatsPdfTxtJpegPngDocx() {
+    }
+
+    @Given("to the insert button in the text, after uploading the file or photo, you need to delete it by right clicking on delete.")
+    public void toTheInsertButtonInTheTextAfterUploadingTheFileOrPhotoYouNeedToDeleteItByRightClickingOnDelete() {
     }
 }
