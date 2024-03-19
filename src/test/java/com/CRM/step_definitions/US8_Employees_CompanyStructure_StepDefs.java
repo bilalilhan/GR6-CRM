@@ -99,7 +99,7 @@ public class US8_Employees_CompanyStructure_StepDefs extends BrowserUtils {
         String actualVerification= empPage.companyStructure.getText();
 
         Assert.assertEquals(expectedVerification, actualVerification);
-//After checking with Aaron, will need to change the verification to companyStructureTitle from companyStructureTab
+//After checking with Aaron, will need to change the verification to companyStructureTitle from companyStructureTab //
         System.out.println("Assertion has passed");
     }
 

@@ -7,7 +7,7 @@ Feature: Users should be able to access Company Page
   2.Verify that the HR user can add a department from the Company Structure
   3.Verify that the "ADD DEPARTMENT" button is not displayed for Helpdesk and Marketing users
 
-#  @All_Users
+#  @All_Users //
   @ScenarioOutline
   Scenario Outline: All users should be able to see Company Structure tab
     Given User is on CRM application Login page
