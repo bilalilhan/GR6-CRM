@@ -17,10 +17,7 @@ public class EmployeesPage {
     public WebElement employeesPage;
 
     @FindBy(linkText = "Company Structure")
-    public WebElement companyStructureTab;
-
-    @FindBy(id = "pagetitle")
-    public WebElement companyStructureTitle;
+    public WebElement companyStructure;
 
     @FindBy(xpath = "//span[@class='webform-small-button-text']")
     public WebElement addDepartmentButton;
