@@ -11,18 +11,30 @@ public class AddLinkInMessage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy()
-    public WebElement a;
+    @FindBy(xpath = "//span[text()='Message']")
+    public WebElement message;
 
-    @FindBy()
-    public WebElement b;
+    @FindBy(xpath = "//span[@title='Link']")
+    public WebElement link;
 
-    @FindBy()
-    public WebElement c;
+    @FindBy(xpath = "//span[@class='bx-core-adm-dialog-head-inner']")
+    public WebElement linkInputWindowPops;
 
-    @FindBy()
-    public WebElement d;
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-text")
+    public WebElement inputText;
 
-    @FindBy()
-    public WebElement e;
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-href")
+    public WebElement inputURL;
+
+    @FindBy(xpath = "//input[@value ='Save']")
+    public WebElement saveBtn;
+
+
+
+    @FindBy(linkText = "Tesla")
+    public WebElement linkAttachedToText;
+
+
+
+
 }
