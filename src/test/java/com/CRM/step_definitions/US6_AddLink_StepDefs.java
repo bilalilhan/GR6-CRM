@@ -16,6 +16,7 @@ import java.lang.module.Configuration;
 
 public class US6_AddLink_StepDefs {
 
+
     CRM_LoginPage crmLoginPage = new CRM_LoginPage();
     AddLinkInMessage addLinkInMessage = new AddLinkInMessage();
 
@@ -26,6 +27,7 @@ public class US6_AddLink_StepDefs {
         crmLoginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("hr_password"));
         crmLoginPage.loginButton.click();
     }
+
 
     @When("User click on message tab")
     public void user_click_on_message_tab() {
