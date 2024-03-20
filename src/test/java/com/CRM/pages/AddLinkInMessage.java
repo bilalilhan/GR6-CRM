@@ -35,6 +35,7 @@ public class AddLinkInMessage {
     public WebElement linkAttachedToText;
 
 
-
+    @FindBy(id ="blog-submit-button-save")
+    public WebElement sendBtn;
 
 }
