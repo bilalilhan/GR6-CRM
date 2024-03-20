@@ -4,7 +4,7 @@ Agile story: As a user, I should be able to add link in message.
 	
 	@B32G6-182 @CRM
 	Scenario:  Verify that the user can attach a link to the specified text.
-		Given User is on CRM application Login page
+		Given User is on Customer Relationship Management application Login page
 		    When User click on message tab
 		    Then Verify Link button displayed
 		    Then User click on Link button

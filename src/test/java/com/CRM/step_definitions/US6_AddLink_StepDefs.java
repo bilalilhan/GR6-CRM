@@ -20,9 +20,9 @@ public class US6_AddLink_StepDefs {
     CRM_LoginPage crmLoginPage = new CRM_LoginPage();
     AddLinkInMessage addLinkInMessage = new AddLinkInMessage();
 
-    @Given("User is on CRM application Login page")
+    @Given("User is on Customer Relationship Management application Login page")
     public void user_is_on_crm_application_login_page() {
-        Driver.getDriver().get("https://qa.agileprocrm.com");
+      Driver.getDriver().get("https://qa.agileprocrm.com");
         crmLoginPage.usernameInput.sendKeys(ConfigurationReader.getProperty("hr_username"));
         crmLoginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("hr_password"));
         crmLoginPage.loginButton.click();
@@ -76,6 +76,5 @@ public class US6_AddLink_StepDefs {
         String expected = "Tesla";
 
         Assert.assertEquals(actualLinkText, expected);
-
     }
 }
