@@ -6,10 +6,7 @@ import io.cucumber.java.en.When;
 
 public class US6_AddLink_StepDefs {
 
-    @Given("User is on CRM application Login page")
-    public void user_is_on_crm_application_login_page() {
 
-    }
     @When("User click on message tab")
     public void user_click_on_message_tab() {
 
