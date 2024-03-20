@@ -21,6 +21,16 @@ public class CRM_LoginPage {
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//div[@class='errortext']")
+    public WebElement errorMessage;
+
+
+    @FindBy(id = "USER_REMEMBER")
+    public WebElement rememberMeCheckBox;
+
+
+
+
 
     /**
      *This is a login method.
