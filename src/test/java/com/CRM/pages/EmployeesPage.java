@@ -16,9 +16,6 @@ public class EmployeesPage {
     @FindBy(linkText = "Employees")
     public WebElement employeesPage;
 
-    @FindBy(linkText = "Company Structure")
-    public WebElement companyStructureTab;
-
     @FindBy(id = "pagetitle")
     public WebElement companyStructureTitle;
 
