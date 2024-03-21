@@ -52,10 +52,9 @@ public class US8_Employees_CompanyStructure_StepDefs extends BrowserUtils {
     public void verify_If_User_Is_Able_To_See_The_Company_Structure_Under_Employees_Page() {
         //Verifying if user is able to see the Company Structure
         String expectedVerification= "Company Structure";
-        String actualVerification= empPage.companyStructureTab.getText();
+        String actualVerification= empPage.companyStructureTitle.getText();
 
         Assert.assertEquals(expectedVerification, actualVerification);
-//After checking with Aaron, will need to change the verification to companyStructureTitle from companyStructureTab
         System.out.println("Assertion has passed");
     }
 
@@ -96,7 +95,7 @@ public class US8_Employees_CompanyStructure_StepDefs extends BrowserUtils {
     public void user_should_not_be_seeing_add_department_button_from_company_structure() {
         //Verifying if user is able to see the Company Structure
         String expectedVerification= "Company Structure";
-        String actualVerification= empPage.companyStructureTab.getText();
+        String actualVerification= empPage.companyStructureTitle.getText();
 
         Assert.assertEquals(expectedVerification, actualVerification);
 //After checking with Aaron, will need to change the verification to companyStructureTitle from companyStructureTab //
