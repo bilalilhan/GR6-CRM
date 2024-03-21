@@ -18,8 +18,11 @@ public class UploadFilesPage {
     public WebElement clickUploadFile;
 
 
-    @FindBy(xpath = "//td[@class='diskuf-selector wd-fa-add-file-light-cell wd-fa-add-file-from-main']")
-    public WebElement DownloadFromExternalDrive;
+    @FindBy(xpath = "//div[@class='diskuf-uploader']//span[1]")
+    public WebElement uploadFileAndImage;
+
+    @FindBy(xpath = "//span[@class='f-wrap']")
+    public WebElement FileOrImage;
 
     @FindBy(id = "check-in-text-n1473")
     public WebElement InsertInText;
