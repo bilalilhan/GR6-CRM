@@ -7,19 +7,26 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UploadFilesPage {
 
-
     public UploadFilesPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(id = "feed-add-post-form-tab-message")
-    public WebElement Message;
+    public WebElement clickMassageTab;
 
     @FindBy(id = "bx-b-uploadfile-blogPostForm")
-    public WebElement UploadFiles;
+    public WebElement clickUploadFile;
 
-    @FindBy(xpath = "//*[@id=\"disk-edit-attachn1223\"]/td[1]/span[1]")  // Fixed XPath
-    public WebElement AttachedFilesAndImages;
+
+    @FindBy(xpath = "//td[@class='diskuf-selector wd-fa-add-file-light-cell wd-fa-add-file-from-main']")
+    public WebElement DownloadFromExternalDrive;
+
+    @FindBy(id = "check-in-text-n1473")
+    public WebElement InsertInText;
+
+    @FindBy(xpath = "//*[@id=\"disk-edit-attachn1462\"]/td[5]/span")
+    public WebElement RemoveFile;
+
 
 }
 
