@@ -44,7 +44,7 @@ public class CRM_MainPage {
 
     }
 
-    //With these methods, you do NOT need to call Driver.get(), instead of this: you just need to instantiate an object with calling CRM_LoginPage class. You can login as an hr, a helpdesk ,or a marketing user.
+    //With these methods, you do NOT need to call Driver.get(), instead of this: you just need to instantiate an object with calling CRM_MainPage class. You can login as an hr, a helpdesk ,or a marketing user.
     /**
      * This is an example with my US4_SendingMessage_StepDefs
      *
