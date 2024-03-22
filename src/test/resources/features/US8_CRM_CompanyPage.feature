@@ -8,6 +8,7 @@ Feature: Users should be able to access Company Page
   3.Verify that the "ADD DEPARTMENT" button is not displayed for Helpdesk and Marketing users
 
 #  @All_Users //
+  @B32G6-192
   @ScenarioOutline
   Scenario Outline: All users should be able to see Company Structure tab
     Given User is on CRM application Login page
@@ -29,6 +30,7 @@ Feature: Users should be able to access Company Page
       | marketing100@cydeo.com | UserUser |
 
 #@HR_User
+  @B32G6-193
   @ScenarioOutline
   Scenario Outline:HR user should be able to add a department from Company Structure
     Given User is on CRM application Login page
