@@ -49,7 +49,7 @@ public class US8_Employees_CompanyStructure_StepDefs extends BrowserUtils {
     }
 
     @And("Verify if User is able to see the Company Structure under Employees page")
-    public void verify_If_User_Is_Able_To_See_The_Company_Structure_Under_Employees_Page() {
+    public void verify_If_User_Is_Able_To_See_The_Company_Structure_Under_Employees_Page() throws IOException {
         //Verifying if user is able to see the Company Structure
         String expectedVerification= "Company Structure";
         String actualVerification= empPage.companyStructureTitle.getText();
