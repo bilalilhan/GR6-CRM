@@ -11,8 +11,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.*;
 import java.lang.module.Configuration;
+import java.util.Set;
 
 public class US6_AddLink_StepDefs {
 
@@ -22,7 +27,7 @@ public class US6_AddLink_StepDefs {
 
     @Given("User is on Customer Relationship Management application Login page")
     public void user_is_on_crm_application_login_page() {
-      Driver.getDriver().get("https://qa.agileprocrm.com");
+        Driver.getDriver().get("https://qa.agileprocrm.com");
         crmLoginPage.usernameInput.sendKeys(ConfigurationReader.getProperty("hr_username"));
         crmLoginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("hr_password"));
         crmLoginPage.loginButton.click();
@@ -43,11 +48,13 @@ public class US6_AddLink_StepDefs {
     @Then("User click on Link button")
     public void user_click_on_link_button() {
         addLinkInMessage.link.click();
+        BrowserUtils.sleep(3);
     }
 
     @Then("Verify Link window is displayed")
     public void verify_link_window_is_displayed() {
         addLinkInMessage.linkInputWindowPops.isDisplayed();
+        BrowserUtils.sleep(3);
     }
 
 
@@ -77,4 +84,32 @@ public class US6_AddLink_StepDefs {
 
         Assert.assertEquals(actualLinkText, expected);
     }
+
+    @Then("user click SEND button")
+    public void userClickSENDButton() {
+        addLinkInMessage.sendBtn.click();
+    }
+
+
+    @When("user click on the {string} link")
+    public void user_click_on_the_link(String link) {
+        addLinkInMessage.linkTextInActivityStream.click();
+        BrowserUtils.sleep(5);
+    }
+
+    @Then("user should be navigated to the expected URL")
+    public void user_should_be_navigated_to_the_expected_url() {
+
+        Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+        for (String windowHandle : windowHandles) {
+            Driver.getDriver().switchTo().window(windowHandle);
+        }
+
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        String expectedUrl = "https://www.tesla.com/";
+
+
+        Assert.assertEquals(expectedUrl, actualUrl);
+    }
+
 }
