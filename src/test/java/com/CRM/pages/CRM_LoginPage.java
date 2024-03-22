@@ -1,5 +1,6 @@
 package com.CRM.pages;
 
+import com.CRM.utilities.ConfigurationReader;
 import com.CRM.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,9 +56,9 @@ public class CRM_LoginPage {
      */
 
     public void login(){
-        Driver.getDriver().get("https://login2.nextbasecrm.com");
-        usernameInput.sendKeys("hr1@cydeo.com");
-        passwordInput.sendKeys("UserUser");
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        usernameInput.sendKeys(ConfigurationReader.getProperty("hr_username"));
+        passwordInput.sendKeys(ConfigurationReader.getProperty("hr_password"));
         loginButton.click();
     }
 }
