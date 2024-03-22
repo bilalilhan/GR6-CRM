@@ -23,7 +23,7 @@ public class SendingMessagePage {
     @FindBy(tagName = "body")     // still inside of iframe
     public WebElement textMessageArea;
 
-    @FindBy(id = "blog-submit-button-save")  // outside iframe
+    @FindBy(id = "blog-submit-button-save")  // outside iframe //?
     public WebElement sendButton ;
 
     @FindBy(id = "blog-submit-button-cancel")
@@ -37,7 +37,7 @@ public class SendingMessagePage {
     public WebElement allEmplyeesXbutton;
 
 
-    @FindBy(xpath ="//span[@class='feed-add-info-text']")
+    @FindBy(xpath ="//span[@class='feed-add-info-text']")//?
     public WebElement errorMessageText;
 
     @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
