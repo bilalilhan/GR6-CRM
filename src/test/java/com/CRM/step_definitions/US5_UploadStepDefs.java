@@ -1,37 +1,94 @@
 package com.CRM.step_definitions;
 
+import com.CRM.pages.CRM_LoginPage;
+import com.CRM.pages.UploadFilesPage;
+import com.CRM.utilities.BrowserUtils;
+import com.CRM.utilities.ConfigurationReader;
+import com.CRM.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class US5_UploadStepDefs {
+    UploadFilesPage uploadFilesPage = new UploadFilesPage();
+    CRM_LoginPage crmLoginPage = new CRM_LoginPage();
 
-    @Given("to the text insertion button, by clicking on this button, the text or photo should be inserted in the message tab.")
-    public void toTheTextInsertionButtonByClickingOnThisButtonTheTextOrPhotoShouldBeInsertedInTheMessageTab() {
+    @Given("User is on CRM {int} home page")
+    public void user_is_on_crm_home_page(Integer int1) {
+        Driver.getDriver().get( "https://qa.agileprocrm.com" );
+        crmLoginPage.usernameInput.sendKeys( ConfigurationReader.getProperty( "marketing_username" ) );
+        crmLoginPage.passwordInput.sendKeys( ConfigurationReader.getProperty( "marketing_password" ) );
+        crmLoginPage.loginButton.click();
     }
 
-    @And("by typing the text of the photo in the message tab and clicking the insert button in the file text, it should be inserted in the message tab.")
-    public void byTypingTheTextOfThePhotoInTheMessageTabAndClickingTheInsertButtonInTheFileTextItShouldBeInsertedInTheMessageTab() {
+    @When("User must be {string} Massage Tab")
+    public void user_must_be_massage_tab(String string) {
+        uploadFilesPage.clickMassageTab.click();
     }
 
-    @Given("user's click on the file upload in the message form")
-    public void userSClickOnTheFileUploadInTheMessageForm() {
+    @Given("User's click on the file upload in the message form")
+    public void user_s_click_on_the_file_upload_in_the_message_form() {
+        Driver.getDriver().get( "https://qa.agileprocrm.com" );
+        crmLoginPage.usernameInput.sendKeys( ConfigurationReader.getProperty( "marketing_username" ) );
+        crmLoginPage.passwordInput.sendKeys( ConfigurationReader.getProperty( "marketing_password" ) );
+        crmLoginPage.loginButton.click();
+        uploadFilesPage.clickMassageTab.click();
+
     }
 
-    @When("the user clicks on the message tab.")
-    public void theUserClicksOnTheMessageTab() {
+    @When("User must be click on the {string} button.")
+    public void user_must_be_click_on_the_button(String imagePath) {
+        uploadFilesPage.clickUploadFile.click();
     }
 
-    @When("user clicks on the upload file button.")
-    public void userClicksOnTheUploadFileButton() {
+    @When("User must be on the  {string}.")
+    public void user_must_be_on_the(String imagePath) {
+        uploadFilesPage.uploadFileAndImage.click();
+
+        WebElement fileInput = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+
+        fileInput.sendKeys( "C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg" );
+        WebElement fileInputPng = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInputPng.sendKeys( "C:\\Users\\Lenovo\\Desktop\\file.txt.png" );
+
+        WebElement fileInputText = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInputText.sendKeys( "C:\\Users\\Lenovo\\Desktop\\Hello.text" );
+        BrowserUtils.sleep( 1 );
+
+        uploadFilesPage.InsertInText.click();
+
+
+
     }
 
-    @Then("the user should be able to click on the upload file and image button and upload the file or photo with formats .pdf, .txt, .jpeg, .png, .docx")
-    public void theUserShouldBeAbleToClickOnTheUploadFileAndImageButtonAndUploadTheFileOrPhotoWithFormatsPdfTxtJpegPngDocx() {
+    @Given("User must be {string} files and images before sending.")
+    public void user_must_be_files_and_images_before_sending(String RemoveFile) {
+        Driver.getDriver().get( "https://qa.agileprocrm.com" );
+        crmLoginPage.usernameInput.sendKeys( ConfigurationReader.getProperty( "marketing_username" ) );
+        crmLoginPage.passwordInput.sendKeys( ConfigurationReader.getProperty( "marketing_password" ) );
+        crmLoginPage.loginButton.click();
+        uploadFilesPage.clickMassageTab.click();
+        uploadFilesPage.clickUploadFile.click();
+        uploadFilesPage.uploadFileAndImage.click();
+        WebElement fileInput = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInput.sendKeys( "C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg" );
+        uploadFilesPage.InsertInText.click();
+        uploadFilesPage.InsertInText.click();
+        uploadFilesPage.RemoveFile.click();
+
+
     }
 
-    @Given("to the insert button in the text, after uploading the file or photo, you need to delete it by right clicking on delete.")
-    public void toTheInsertButtonInTheTextAfterUploadingTheFileOrPhotoYouNeedToDeleteItByRightClickingOnDelete() {
+
+
+    @And("User must be on the  {string} .pdf, .txt, .jpeg, .png, .docx.")
+    public void userMustBeOnThePdfTxtJpegPngDocx(String arg0) {
+
     }
 }
