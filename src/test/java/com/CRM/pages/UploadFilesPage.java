@@ -18,17 +18,19 @@ public class UploadFilesPage {
     public WebElement clickUploadFile;
 
 
-    @FindBy(xpath = "//div[@class='diskuf-uploader']//span[1]")
+    @FindBy(xpath = "//div[@class='diskuf-uploader'][1]")
     public WebElement uploadFileAndImage;
 
-    @FindBy(xpath = "//span[@class='f-wrap']")
+    @FindBy(id = "diskuf-docn1242")
     public WebElement FileOrImage;
 
-    @FindBy(id = "check-in-text-n1473")
+    @FindBy(xpath = "//span[@class='insert-btn-text']")
     public WebElement InsertInText;
 
-    @FindBy(xpath = "//*[@id=\"disk-edit-attachn1462\"]/td[5]/span")
+
+    @FindBy(xpath = "//span[@class='del-but']")
     public WebElement RemoveFile;
+
 
 
 }
