@@ -17,16 +17,14 @@ public class UploadFilesPage {
     @FindBy(id = "bx-b-uploadfile-blogPostForm")
     public WebElement clickUploadFile;
 
-
     @FindBy(xpath = "//div[@class='diskuf-uploader'][1]")
     public WebElement uploadFileAndImage;
 
-    @FindBy(id = "//*[@id=\"diskuf-selectdialog-XSCdNM5\"]/div[1]")
+    @FindBy(name = "files")
     public WebElement FileOrImage;
 
     @FindBy(xpath = "//span[@class='insert-btn-text']")
     public WebElement InsertInText;
-
 
     @FindBy(xpath = "//span[@class='del-but']")
     public WebElement RemoveFile;
