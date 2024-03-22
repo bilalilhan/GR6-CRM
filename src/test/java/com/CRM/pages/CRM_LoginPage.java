@@ -46,4 +46,18 @@ public class CRM_LoginPage {
     }
 
 
+
+
+    /**
+     *This is a login method.
+     * By calling this method you can log in to CRM application automatically
+     *
+     */
+
+    public void login(){
+        Driver.getDriver().get("https://login2.nextbasecrm.com");
+        usernameInput.sendKeys("hr1@cydeo.com");
+        passwordInput.sendKeys("UserUser");
+        loginButton.click();
+    }
 }
