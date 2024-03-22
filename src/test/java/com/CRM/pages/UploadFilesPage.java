@@ -21,7 +21,7 @@ public class UploadFilesPage {
     @FindBy(xpath = "//div[@class='diskuf-uploader'][1]")
     public WebElement uploadFileAndImage;
 
-    @FindBy(id = "diskuf-docn1242")
+    @FindBy(id = "//*[@id=\"diskuf-selectdialog-XSCdNM5\"]/div[1]")
     public WebElement FileOrImage;
 
     @FindBy(xpath = "//span[@class='insert-btn-text']")
@@ -30,8 +30,6 @@ public class UploadFilesPage {
 
     @FindBy(xpath = "//span[@class='del-but']")
     public WebElement RemoveFile;
-
-
 
 }
 

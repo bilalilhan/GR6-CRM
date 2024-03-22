@@ -12,7 +12,7 @@ Feature: Default
 	Scenario: Verify that the user can upload files and pictures.
 		Given User's click on the file upload in the message form
 		When User must be click on the "upload file" button.
-		And User must be on the  "Upload File and image".
+		And User must be on the  "Upload File and image" .pdf, .txt, .jpeg, .png, .docx.
 
 	
 	@B32G6-180

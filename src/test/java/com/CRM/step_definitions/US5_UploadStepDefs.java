@@ -52,8 +52,18 @@ public class US5_UploadStepDefs {
         uploadFilesPage.uploadFileAndImage.click();
 
         WebElement fileInput = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+
         fileInput.sendKeys( "C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg" );
+        WebElement fileInputPng = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInputPng.sendKeys( "C:\\Users\\Lenovo\\Desktop\\file.txt.png" );
+
+        WebElement fileInputText = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInputText.sendKeys( "C:\\Users\\Lenovo\\Desktop\\Hello.text" );
+        BrowserUtils.sleep( 1 );
+
         uploadFilesPage.InsertInText.click();
+
+
 
     }
 
@@ -72,6 +82,13 @@ public class US5_UploadStepDefs {
         uploadFilesPage.InsertInText.click();
         uploadFilesPage.RemoveFile.click();
 
+
+    }
+
+
+
+    @And("User must be on the  {string} .pdf, .txt, .jpeg, .png, .docx.")
+    public void userMustBeOnThePdfTxtJpegPngDocx(String arg0) {
 
     }
 }
