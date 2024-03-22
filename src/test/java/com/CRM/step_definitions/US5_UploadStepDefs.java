@@ -26,6 +26,7 @@ public class US5_UploadStepDefs {
         crmLoginPage.passwordInput.sendKeys( ConfigurationReader.getProperty( "marketing_password" ) );
         crmLoginPage.loginButton.click();
     }
+
     @When("User must be {string} Massage Tab")
     public void user_must_be_massage_tab(String string) {
         uploadFilesPage.clickMassageTab.click();
@@ -40,16 +41,18 @@ public class US5_UploadStepDefs {
         uploadFilesPage.clickMassageTab.click();
 
     }
+
     @When("User must be click on the {string} button.")
     public void user_must_be_click_on_the_button(String imagePath) {
         uploadFilesPage.clickUploadFile.click();
     }
+
     @When("User must be on the  {string}.")
-    public void user_must_be_on_the(String imagePath  ) {
+    public void user_must_be_on_the(String imagePath) {
         uploadFilesPage.uploadFileAndImage.click();
 
-        WebElement fileInput = Driver.getDriver().findElement(By.cssSelector("input[type='file']"));
-        fileInput.sendKeys("C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg");
+        WebElement fileInput = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInput.sendKeys( "C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg" );
         uploadFilesPage.InsertInText.click();
 
     }
@@ -63,8 +66,8 @@ public class US5_UploadStepDefs {
         uploadFilesPage.clickMassageTab.click();
         uploadFilesPage.clickUploadFile.click();
         uploadFilesPage.uploadFileAndImage.click();
-        WebElement fileInput = Driver.getDriver().findElement(By.cssSelector("input[type='file']"));
-        fileInput.sendKeys("C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg");
+        WebElement fileInput = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        fileInput.sendKeys( "C:\\Users\\Lenovo\\Desktop\\avatar-blank.jpg" );
         uploadFilesPage.InsertInText.click();
         uploadFilesPage.InsertInText.click();
         uploadFilesPage.RemoveFile.click();
