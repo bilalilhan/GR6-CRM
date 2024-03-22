@@ -12,16 +12,19 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class US4_SendingMessage_StepDefs {
-     CRM_MainPage crm_mainPage = new CRM_MainPage();
+    CRM_MainPage crm_mainPage = new CRM_MainPage();
+
     @Given("user is on the Activity Stream page")
     public void user_is_on_the_activity_stream_page() {
 
-       crm_mainPage.crmMainPage_hr();
-      // crm_mainPage.crmMainPage_helpDesk();
-      // crm_mainPage.crmMainPage_marketing();
+
+        crm_mainPage.crmMainPage_hr();
+        // crm_mainPage.crmMainPage_helpDesk();
+        //crm_mainPage.crmMainPage_marketing();
     }
 
     SendingMessagePage messagePage = new SendingMessagePage();
+
     @When("user clicks on the Message tab")
     public void user_clicks_on_the_message_tab() {
         messagePage.messageButton.click();
@@ -29,7 +32,7 @@ public class US4_SendingMessage_StepDefs {
 
     @And("user fills the message content as a mandatory field {string}")
     public void userFillsTheMessageContentAsAMandatoryField(String testMessage) {
-
+        BrowserUtils.sleep(2);
         Driver.getDriver().switchTo().frame(messagePage.messageAreaIframe);
         messagePage.textMessageArea.sendKeys(testMessage);
     }
@@ -43,18 +46,23 @@ public class US4_SendingMessage_StepDefs {
 
     @Then("the message should be sent successfully and displayed {string}")
     public void theMessageShouldBeSentSuccessfullyAndDisplayed(String expectedText) {
+        BrowserUtils.sleep(3);
 
-        String actualText =  messagePage.messageDisplayedArea.getText();
-        Assert.assertEquals(actualText,expectedText);
+        String actualText = messagePage.messageDisplayedArea.getText();
+        Assert.assertEquals(actualText, expectedText);
     }
 
 
     @When("user tries to send a message without filling in the mandatory fields")
     public void userTriesToSendAMessageWithoutFillingInTheMandatoryFields() {
         messagePage.messageButton.click();
+
         Driver.getDriver().switchTo().frame(messagePage.messageAreaIframe);
+
         messagePage.textMessageArea.clear();
-       messagePage.sendButton.click();
+
+        Driver.getDriver().switchTo().defaultContent();
+        messagePage.sendButton.click();
     }
 
     @When("user tries to send a message without choosing any recipients")
@@ -62,15 +70,15 @@ public class US4_SendingMessage_StepDefs {
 
         messagePage.messageButton.click();
         messagePage.allEmplyeesXbutton.click();
+        messagePage.sendButton.click();
     }
-
 
 
     @Then("user should see error messages {string}")
     public void userShouldSeeErrorMessages(String expectedErrorMessage) {
         String actualErrorMessage = messagePage.errorMessageText.getText();
 
-        Assert.assertEquals(actualErrorMessage,expectedErrorMessage);
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
 
     }
@@ -78,12 +86,11 @@ public class US4_SendingMessage_StepDefs {
 
     @Then("the message delivery should be set to {string} by default")
     public void theMessageDeliveryShouldBeSetToAllEmployeesByDefault(String defaultDeliveryTo) {
-
-       String actualDeliveryTo = messagePage.allEmployeesText.getText();
-       Assert.assertEquals(actualDeliveryTo,defaultDeliveryTo);
+        BrowserUtils.sleep(2);
+        String actualDeliveryTo = messagePage.allEmployeesText.getText();
+        Assert.assertEquals(actualDeliveryTo, defaultDeliveryTo);
 
     }
-
 
 
     @Then("user clicks on the cancel button")
@@ -99,7 +106,6 @@ public class US4_SendingMessage_StepDefs {
 
         Assert.assertFalse(messagePage.sendButton.isDisplayed());
     }
-
 
 
 }
