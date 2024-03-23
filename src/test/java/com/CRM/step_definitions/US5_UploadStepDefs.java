@@ -100,9 +100,7 @@ public class US5_UploadStepDefs {
         btn_uploadedFileJPG.sendKeys(fullPathJPG);
 
         uploadFilesPage.InsertInText.click();
-        BrowserUtils.sleep( 1 );
         uploadFilesPage.RemoveFile.click();
-
 
     }
 
