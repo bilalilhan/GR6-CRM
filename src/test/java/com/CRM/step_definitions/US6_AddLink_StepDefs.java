@@ -93,7 +93,7 @@ public class US6_AddLink_StepDefs {
 
     @When("user click on the {string} link")
     public void user_click_on_the_link(String link) {
-        addLinkInMessage.linkTextInActivityStream.click();
+        addLinkInMessage.linkTextInActivityStream.sendKeys(link+Keys.ENTER);
         BrowserUtils.sleep(5);
     }
 
