@@ -28,9 +28,6 @@ public class US5_UploadStepDefs {
         uploadFilesPage.clickMassageTab.click();
     }
 
-
-
-
     @Given("User's click on the file upload in the message form")
     public void user_s_click_on_the_file_upload_in_the_message_form() {
         Driver.getDriver().get( "https://qa.agileprocrm.com" );
