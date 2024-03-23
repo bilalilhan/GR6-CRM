@@ -22,3 +22,9 @@ Feature: Add link in message
     Given user is on the Activity Stream page
     When user click on the "Link Text" link
     Then user should be navigated to the expected URL
+
+@AC3
+    Scenario: Verify that the link is opened in a new tab
+      Given user is on the Activity Stream page
+      When user click on the "Link Text" link
+      Then Verify link is opening in a new tab

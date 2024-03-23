@@ -36,7 +36,7 @@ public class AddLinkInMessage {
     @FindBy(id = "blog-submit-button-save")
     public WebElement sendBtn;
 
-    @FindBy(xpath = "//a[@href='http://tesla.com']")
+    @FindBy(linkText = "Tesla")
     public WebElement linkTextInActivityStream;
 
 
