@@ -93,7 +93,7 @@ public class US6_AddLink_StepDefs {
 
     @When("user click on the {string} link")
     public void user_click_on_the_link(String link) {
-        addLinkInMessage.linkTextInActivityStream.click();
+        addLinkInMessage.linkTextInActivityStream.sendKeys(link+Keys.ENTER);
         BrowserUtils.sleep(5);
     }
 
@@ -110,6 +110,22 @@ public class US6_AddLink_StepDefs {
 
 
         Assert.assertEquals(expectedUrl, actualUrl);
+    }
+
+    @Then("Verify link is opening in a new tab")
+    public void verifyLinkIsOpeningInANewTab() {
+
+        String currentWindowHandle = Driver.getDriver().getWindowHandle();
+
+        Set<String> allWindows = Driver.getDriver().getWindowHandles();
+
+        allWindows.remove(currentWindowHandle);
+
+        Assert.assertEquals("The link is not opening in a new tab.", 1, allWindows.size());
+
+        String newTabHandle = (String) allWindows.toArray()[0];
+        Driver.getDriver().switchTo().window(newTabHandle);
+
     }
 
 }
