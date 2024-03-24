@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AddLinkInMessage {
 
-    public AddLinkInMessage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AddLinkInMessage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//span[text()='Message']")
@@ -30,12 +30,16 @@ public class AddLinkInMessage {
     public WebElement saveBtn;
 
 
-
     @FindBy(linkText = "Tesla")
     public WebElement linkAttachedToText;
 
-
-    @FindBy(id ="blog-submit-button-save")
+    @FindBy(id = "blog-submit-button-save")
     public WebElement sendBtn;
+
+    @FindBy(linkText = "Tesla")
+    public WebElement linkTextInActivityStream;
+
+
+
 
 }
