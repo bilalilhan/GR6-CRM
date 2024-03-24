@@ -1,26 +1,31 @@
 
-Feature: Activity stream page functionality
-  Agile story: As user, I should be able to see all the options on the Activity stream page
+Feature:  As a user, I should be able to see all the options on the Activity stream page
 
-  Scenario Outline: : Activity stream page
-    Given user should be able to see all the options on the Activity stream page
-    When user sees "<Expected>" is in the page module
-    Then user clicks to the more button
-    And user sees the following "<options>" under the More tab
+@B32G6-195
+  Scenario Outline: Verify that<userType> views the following options on the Activity Stream page.
+    When user logs in as "<userType>"
+    Then user should be able to see"<Expected>" the following options on the Activity Stream page
     Examples:
-    |Expected|
-    |Message |
-    |Task |
-    |Event |
-    |Poll |
-    |More |
+      | Expected |
+      | MESSAGE  |
+      | TASK     |
+      | EVENT    |
+      | POLL     |
+      | MORE     |
 
+  @B32G6-196
+  Scenario Outline: Verify that<userType> views the following 4 options under the MORE tab
+    When user logs in as "<userType>"
+    And user is on the Activity Stream page
+    And user clicks "<More>" in activity stream
+    Then user should be able to see the following options under more tab on the Activity Stream page
     Examples:
-      |options|
-      |File |
-      |Appreciation |
-      |Announcement |
-      |Workflow |
+      | More         |
+      | File         |
+      | Appreciation |
+      | Announcement |
+      | Workflow     |
+
 
 
     
