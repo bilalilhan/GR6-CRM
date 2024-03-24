@@ -8,6 +8,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Objects;
 
 public class US1_CRM_LoginStepDefs {
 
@@ -66,9 +73,72 @@ public class US1_CRM_LoginStepDefs {
 
     @Then("user should be able to log in and land on the Helpdisk home page")
     public void user_should_be_able_to_log_in_and_land_on_the_helpdisk_home_page() {
-        BrowserUtils.verifyTitleContains("Calendar");
+        BrowserUtils.verifyTitleContains("Portal");
     }
 
+
+
+
+
+
+    @When("user try to login with incorrect {string} and {string}")
+    public void user_try_to_login_with_incorrect_and(String username, String password) {
+
+        loginPage.usernameInput.sendKeys(username);
+        loginPage.passwordInput.sendKeys(password);
+        loginPage.loginButton.click();
+    }
+
+
+    @Then("user should see Incorrect login or password message")
+    public void user_should_see_incorrect_login_or_password_message() {
+
+
+        Assert.assertTrue(loginPage.errorMessage.isDisplayed());
+
+    }
+
+
+
+    @When("user try to login without entering {string} or {string}")
+    public void user_try_to_login_without_entering_or(String username, String password) {
+
+        loginPage.usernameInput.sendKeys(username);
+        loginPage.passwordInput.sendKeys(password);
+        loginPage.loginButton.click();
+    }
+    @Then("user should see Please fill out this field error message")
+    public void user_should_see_please_fill_out_this_field_error_message() {
+        Assert.fail();
+    }
+
+
+    @Then("user should be able to located and click on the Remember me on this computer checkbox in the login page")
+    public void user_should_be_able_to_located_and_click_on_the_remember_me_on_this_computer_checkbox_in_the_login_page() {
+
+      Assert.assertTrue(loginPage.rememberMeCheckBox.isDisplayed());
+
+      //Assert.assertTrue(loginPage.rememberMeCheckBox.isEnabled());
+
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        WebElement checkBox = wait.until(ExpectedConditions.elementToBeClickable(loginPage.rememberMeCheckBox));
+        checkBox.click();
+    }
+
+
+
+    @Then("user should see password input in bullet signs by default")
+    public void user_should_see_password_input_in_bullet_signs_by_default() {
+
+        if (Objects.equals(loginPage.passwordInput.getAttribute("type"), "password")){
+            Assert.assertTrue(true);
+        }else {
+            Assert.fail();
+        }
+
+
+    }
 
     }
 
