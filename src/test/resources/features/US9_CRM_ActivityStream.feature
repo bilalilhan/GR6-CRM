@@ -1,4 +1,4 @@
-@wip
+
 Feature:  As a user, I should be able to see all the options on the Activity stream page
 
 
