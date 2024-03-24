@@ -1,7 +1,7 @@
 
 Feature:  As a user, I should be able to see all the options on the Activity stream page
 
-
+@B32G6-195
   Scenario Outline: Verify that<userType> views the following options on the Activity Stream page.
     When user logs in as "<userType>"
     Then user should be able to see"<Expected>" the following options on the Activity Stream page
@@ -13,7 +13,7 @@ Feature:  As a user, I should be able to see all the options on the Activity str
       | POLL     |
       | MORE     |
 
-
+  @B32G6-196
   Scenario Outline: Verify that<userType> views the following 4 options under the MORE tab
     When user logs in as "<userType>"
     And user is on the Activity Stream page
