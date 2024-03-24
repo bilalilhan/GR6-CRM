@@ -1,7 +1,7 @@
 package com.CRM.step_definitions;
 
 import com.CRM.pages.CRM_LoginPage;
-import com.CRM.pages.EmployeesPage;
+import com.CRM.pages.US8_EmployeesPage;
 import com.CRM.utilities.BrowserUtils;
 import com.CRM.utilities.ConfigurationReader;
 import com.CRM.utilities.Driver;
@@ -9,21 +9,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.io.FileHandler;
 
-import java.io.File;
 import java.io.IOException;
 
-public class US8_Employees_CompanyStructure_StepDefs extends BrowserUtils {
+public class US8_EmployeesPage_CompanyStructure_StepDefs extends BrowserUtils {
 
-    EmployeesPage empPage= new EmployeesPage();
-    CRM_LoginPage loginPage = new CRM_LoginPage();
+    US8_EmployeesPage empPage= new US8_EmployeesPage();
+    CRM_LoginPage    loginPage = new CRM_LoginPage();
+    US1_CRM_LoginStepDefs login= new US1_CRM_LoginStepDefs();
 
     @Given("User is on CRM application Login page")
     public void userIsOnHomePageOfCRMApplication(){
@@ -101,10 +95,6 @@ public class US8_Employees_CompanyStructure_StepDefs extends BrowserUtils {
 //After checking with Aaron, will need to change the verification to companyStructureTitle from companyStructureTab //
         System.out.println("Assertion has passed");
     }
-
-
-
-
 }
 
 

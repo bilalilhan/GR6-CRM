@@ -1,6 +1,7 @@
 package com.CRM.step_definitions;
 
 import com.CRM.pages.CRM_LoginPage;
+import com.CRM.pages.LoginPage;
 import com.CRM.utilities.BrowserUtils;
 import com.CRM.utilities.ConfigurationReader;
 import com.CRM.utilities.Driver;
@@ -89,7 +90,6 @@ public class US1_CRM_LoginStepDefs {
         loginPage.loginButton.click();
     }
 
-
     @Then("user should see Incorrect login or password message")
     public void user_should_see_incorrect_login_or_password_message() {
 
@@ -140,5 +140,6 @@ public class US1_CRM_LoginStepDefs {
 
     }
 
-    }
+
+}
 

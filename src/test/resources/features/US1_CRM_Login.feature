@@ -7,6 +7,7 @@ Feature: CRM login feature
     Given user is on the login page
 
 
+
   Scenario: Login as HR user
     When user enters HR user credentials
     Then user should be able to log in and land on the HR home page

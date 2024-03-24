@@ -1,4 +1,6 @@
-#@EmployeesCompanyStructure @Regression
+  @EmployeesCompanyStructure
+  @Regression
+  @B32G6-198
 Feature: Users should be able to access Company Page
 
   User Story: As a user, I should be able to use functions on Company Structure under Employee menu
@@ -49,6 +51,7 @@ Feature: Users should be able to access Company Page
 
 
 #@Helpdesk_And_Marketing_Users
+  @B32G6-194
   @ScenarioOutline
   Scenario Outline:User should not be seeing ADD DEPARTMENT button from Company Structure
     Given User is on CRM application Login page
