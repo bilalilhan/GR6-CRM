@@ -14,11 +14,8 @@ Feature: Users should be able to access the Employees page.
   New page
   2. Verify that the user views the Company Structure as default by clicking the Employees Module.
   @wip01
-  @Background
-  Scenario: User should be able to access the CRM company page
-   #Given  User is on CRM application Login page
-
-    @Scenario
+  
+Scenario:
     Given User is on CRM application Login page
     Then user enters Helpdesk user credentials
     When User click on Employees menu
