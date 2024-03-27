@@ -17,17 +17,41 @@ public class UploadFilesPage {
     @FindBy(id = "bx-b-uploadfile-blogPostForm")
     public WebElement clickUploadFile;
 
-    @FindBy(xpath = "//div[@class='diskuf-uploader'][1]")
-    public WebElement uploadFileAndImage;
 
-    @FindBy(name = "files")
-    public WebElement FileOrImage;
 
-    @FindBy(xpath = "//span[@class='insert-btn-text']")
-    public WebElement InsertInText;
+    @FindBy(xpath = "//table//tr[1]/td[4]//span[@class='insert-btn-text']")
+    public WebElement uploadPdfFile;
+    @FindBy(xpath = "//table//tr[2]/td[4]//span[@class='insert-btn-text']")
+    public WebElement uploadTextFile;
+    @FindBy(xpath = "//table//tr[3]/td[4]//span[@class='insert-btn-text']")
+    public WebElement uploadImgJpg;
+    @FindBy(xpath = "//table//tr[4]/td[4]//span[@class='insert-btn-text']")
+    public WebElement uploadImgPng;
+    @FindBy(xpath = "//table//tr[5]/td[4]//span[@class='insert-btn-text']")
+    public WebElement uploadWordFile;
+
+
+
 
     @FindBy(xpath = "//span[@class='del-but']")
-    public WebElement RemoveFile;
+    public WebElement RemovePdfFile;
+
+
+    @FindBy(xpath = "//span[@class='del-but']")
+    public WebElement RemoveTextFile;
+
+
+    @FindBy(xpath = "//span[@class='del-but']")
+    public WebElement RemoveImgJpg;
+
+
+    @FindBy(xpath = "//span[@class='del-but']")
+    public WebElement RemoveImgPng;
+
+    @FindBy(xpath = "//span[@class='del-but']")
+    public WebElement RemoveWordFile;
+
+
 
 }
 
