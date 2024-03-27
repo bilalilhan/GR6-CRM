@@ -8,7 +8,6 @@ import com.CRM.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -46,37 +45,47 @@ public class US5_UploadStepDefs {
     }
     @And("User must be on the  {string} .pdf, .txt, .jpeg, .png, .docx.")
     public void userMustBeOnThePdfTxtJpegPngDocx(String arg0) {
-        WebElement btn_uploadedFileJPG = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
-        String projectPath = System.getProperty("user.dir");
-        String filePathJPG = "src/test/resources/files/TestJpeg.jpg";
-        String fullPathJPG = projectPath + "/" + filePathJPG;
-        btn_uploadedFileJPG.sendKeys(fullPathJPG);
-
-        WebElement btn_uploadedFilePNG = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
-        String projectPathPNG = System.getProperty("user.dir");
-        String filePathPNG = "src/test/resources/files/TestPng.png";
-        String fullPathPNG = projectPathPNG + "/" + filePathPNG;
-        btn_uploadedFilePNG.sendKeys(fullPathPNG);
 
         WebElement btn_uploadedFilePDF = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
         String projectPathPDF = System.getProperty("user.dir");
         String filePathPDF = "src/test/resources/files/TestPdf.pdf";
         String fullPathPDF = projectPathPDF + "/" + filePathPDF;
         btn_uploadedFilePDF.sendKeys(fullPathPDF);
+        uploadFilesPage.uploadPdfFile.click();
+
+
+        WebElement btn_uploadedFileTXT = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPathTXT = System.getProperty("user.dir");
+        String filePathTXT = "src/test/resources/files/TestTxt.txt";
+        String fullPathTXT = projectPathTXT + "/" + filePathTXT;
+        btn_uploadedFileTXT.sendKeys(fullPathTXT);
+        uploadFilesPage.uploadTextFile.click();
+
+        WebElement btn_uploadedFileJPG = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPath = System.getProperty("user.dir");
+        String filePathJPG = "src/test/resources/files/TestJpeg.jpg";
+        String fullPathJPG = projectPath + "/" + filePathJPG;
+        btn_uploadedFileJPG.sendKeys(fullPathJPG);
+        uploadFilesPage.uploadImgJpg.click();
+
+        WebElement btn_uploadedFilePNG = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPathPNG = System.getProperty("user.dir");
+        String filePathPNG = "src/test/resources/files/TestPng.png";
+        String fullPathPNG = projectPathPNG + "/" + filePathPNG;
+        btn_uploadedFilePNG.sendKeys(fullPathPNG);
+        uploadFilesPage.uploadImgPng.click();
 
         WebElement btn_uploadedFileDOCX = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
         String projectPathDOCX = System.getProperty("user.dir");
         String filePathDOCX = "src/test/resources/files/TestDocx.docx";
         String fullPathDOCX = projectPathDOCX + "/" + filePathDOCX;
         btn_uploadedFileDOCX.sendKeys(fullPathDOCX);
+        uploadFilesPage.uploadWordFile.click();
 
-        uploadFilesPage.InsertInText.click();
-        uploadFilesPage.InsertInText.click();
-        uploadFilesPage.InsertInText.click();
-        uploadFilesPage.InsertInText.click();
-
-        BrowserUtils.sleep( 3 );
+        BrowserUtils.sleep( 1 );
     }
+
+
 
     @Given("User must be {string} files and images before sending.")
     public void user_must_be_files_and_images_before_sending(String RemoveFile) {
@@ -90,15 +99,49 @@ public class US5_UploadStepDefs {
         uploadFilesPage.clickUploadFile.click();
 
 
+        WebElement btn_uploadedFilePDF = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPathPDF = System.getProperty("user.dir");
+        String filePathPDF = "src/test/resources/files/TestPdf.pdf";
+        String fullPathPDF = projectPathPDF + "/" + filePathPDF;
+        btn_uploadedFilePDF.sendKeys(fullPathPDF);
+        uploadFilesPage.uploadPdfFile.click();
+
+
+        WebElement btn_uploadedFileTXT = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPathTXT = System.getProperty("user.dir");
+        String filePathTXT = "src/test/resources/files/TestTxt.txt";
+        String fullPathTXT = projectPathTXT + "/" + filePathTXT;
+        btn_uploadedFileTXT.sendKeys(fullPathTXT);
+        uploadFilesPage.uploadTextFile.click();
+
         WebElement btn_uploadedFileJPG = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
         String projectPath = System.getProperty("user.dir");
         String filePathJPG = "src/test/resources/files/TestJpeg.jpg";
         String fullPathJPG = projectPath + "/" + filePathJPG;
         btn_uploadedFileJPG.sendKeys(fullPathJPG);
+        uploadFilesPage.uploadImgJpg.click();
 
-        uploadFilesPage.InsertInText.click();
-        uploadFilesPage.RemoveFile.click();
+        WebElement btn_uploadedFilePNG = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPathPNG = System.getProperty("user.dir");
+        String filePathPNG = "src/test/resources/files/TestPng.png";
+        String fullPathPNG = projectPathPNG + "/" + filePathPNG;
+        btn_uploadedFilePNG.sendKeys(fullPathPNG);
+        uploadFilesPage.uploadImgPng.click();
+
+        WebElement btn_uploadedFileDOCX = Driver.getDriver().findElement( By.cssSelector( "input[type='file']" ) );
+        String projectPathDOCX = System.getProperty("user.dir");
+        String filePathDOCX = "src/test/resources/files/TestDocx.docx";
+        String fullPathDOCX = projectPathDOCX + "/" + filePathDOCX;
+        btn_uploadedFileDOCX.sendKeys(fullPathDOCX);
+        uploadFilesPage.uploadWordFile.click();
+
+        BrowserUtils.sleep( 1 );
+
+        uploadFilesPage.RemovePdfFile.click();
+        uploadFilesPage.RemoveTextFile.click();
+        uploadFilesPage.RemoveImgJpg.click();
+        uploadFilesPage.RemoveImgPng.click();
+        uploadFilesPage.RemoveWordFile.click();
 
     }
-
 }
